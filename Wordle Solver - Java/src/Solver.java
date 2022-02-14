@@ -33,8 +33,11 @@ public class Solver {
                 System.out.println("Try: " + wordList.toString());
             }
             Scanner inputObj = new Scanner(System.in);
-            System.out.println("Which letters were not in the word?: ");
+            System.out.println("Which letters were not in the word? (type exit to quit): ");
             lettersNotInWord += inputObj.nextLine();
+            if(lettersNotInWord.contains("exit")) {
+                System.exit(0);
+            }
             System.out.println("Which letters were in the word (yellow)? (___x_): ");
             lettersInWordUnknown = inputObj.nextLine();
             System.out.println("Which letters were in the word (green)? (_x___): ");
@@ -85,7 +88,7 @@ public class Solver {
 
     private static LinkedList<String> getWords() throws FileNotFoundException {
         LinkedList<String> wordList = new LinkedList<String>();
-        File file = new File("C:\\Users\\jacob\\Desktop\\pythonProbs\\Java\\src\\wordsBig.txt");
+        File file = new File("C:\\Users\\jacob\\Desktop\\projects\\Projects\\Wordle Solver - Java\\src\\wordsBig.txt");
         Scanner inputFile = new Scanner(file);
         while(inputFile.hasNext()) {
             wordList.add(inputFile.nextLine());
