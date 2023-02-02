@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Solver {
     private static void menu() throws FileNotFoundException {
-        String lettersNotInWord = "";
-        String lettersInWordKnown = "_____";
-        String lettersInWordUnknown = "_____";
+        String lettersNotInWord = ""; // Initial String variables
+        String lettersInWordKnown = "_____"; // for the letters in the word that are green (known position)
+        String lettersInWordUnknown = "_____"; // for the letters in the word that are yellow (unknown position)
 
         LinkedList<String> wordList = getWords();
         LinkedList<String> wordList2 = getWords();
@@ -47,7 +47,7 @@ public class Solver {
     }
     private static LinkedList<String> solve(LinkedList<String> wordList, LinkedList<String> wordList2, String lettersNotInWord, String lettersInWordKnown, String lettersInWordUnknown) {
 
-        for(String word : wordList) {
+        for(String word : wordList) { //remove words from wordList that have a letter that isn't in the word
             for(int i = 0; i < lettersNotInWord.length(); i++) {
                 char letter = lettersNotInWord.charAt(i);
                 if(word.contains("" + letter)) {
@@ -56,20 +56,20 @@ public class Solver {
                 }
             }
         }
-        wordList = (LinkedList<String>) wordList2.clone();
+        wordList = (LinkedList<String>) wordList2.clone(); //for the yellow letters, if the letter is '_' do nothing
         for(String word : wordList) {
             for(int i = 0; i < lettersInWordUnknown.length(); i++) {
                 char letter = lettersInWordUnknown.charAt(i);
                 if(letter == '_') {
                     continue;
                 }
-                if(!word.contains("" + letter) || (word.indexOf(letter) == lettersInWordUnknown.indexOf(letter))) {
+                if(!word.contains("" + letter) || (word.indexOf(letter) == lettersInWordUnknown.indexOf(letter))) { //if the letter is in the wrong spot, or doesn't contain the letter, remove the word from the linked list
                     wordList2.remove(word);
                     break;
                 }
             }
         }
-        wordList = (LinkedList<String>) wordList2.clone();
+        wordList = (LinkedList<String>) wordList2.clone(); //for the green letters, same as previous conditional statement.
         for(String word : wordList) {
             for(int i = 0; i < lettersInWordKnown.length(); i++) {
                 char letter = lettersInWordKnown.charAt(i);
@@ -88,7 +88,7 @@ public class Solver {
 
     private static LinkedList<String> getWords() throws FileNotFoundException {
         LinkedList<String> wordList = new LinkedList<String>();
-        File file = new File("C:\\Users\\jacob\\Desktop\\projects\\Projects\\Wordle Solver - Java\\src\\wordsBig.txt");
+        File file = new File("C:\\Users\\jacob\\Desktop\\Projects\\Wordle Solver - Java\\src\\wordsBig.txt");
         Scanner inputFile = new Scanner(file);
         while(inputFile.hasNext()) {
             wordList.add(inputFile.nextLine());
