@@ -4,10 +4,10 @@ import requests
 import json
 import time
 
-def auth():
-    url = "https://api.aniapi.com/v1/auth/me"
-    headers={'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzNyIsIm5iZiI6MTY0MTc2Nzg2NSwiZXhwIjoxNjQ0MzU5ODY1LCJpYXQiOjE2NDE3Njc4NjV9.6WZdpwL1uwdciPxcITYl8eXixU_HKIBEy0dphtm5zlc'}
-    resp = requests.get(url,headers=headers)
+def auth(): # Auth has expired
+    url = "https://api.aniapi.com/v1/auth/me" 
+    headers={'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzNyIsIm5iZiI6MTY0MTc2Nzg2NSwiZXhwIjoxNjQ0MzU5ODY1LCJpYXQiOjE2NDE3Njc4NjV9.H9AUtQkBU5gMigdbEXHEFRHmc4rTlGH534dx8LbSRg4'}
+    resp = requests.get(url, headers=headers, verify=False)
     return resp.status_code
 
 def getJsonText():
@@ -21,7 +21,7 @@ def getJsonText():
             genreString = genreString + "," + genre
 
     mainUrl = "https://api.aniapi.com/v1/anime?genres=" + genreString
-    resp = requests.get(mainUrl).text
+    resp = requests.get(mainUrl, verify=False).text
     jsonText = json.loads(resp)
     return jsonText
 
