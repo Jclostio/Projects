@@ -4,6 +4,9 @@ from flask import request
 import requests
 app = Flask(__name__)
 
+
+# Playing around with Flask, makes a simple HTTP GET request that pulls from a random api (cat facts)
+
 @app.route('/', methods=['GET', 'POST'])
 def main():
     api_url = "https://cat-fact.herokuapp.com/facts/random"
