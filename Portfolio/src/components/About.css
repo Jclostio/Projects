@@ -1,0 +1,91 @@
+.about-section {
+    display: flex;
+    align-items: center;
+    padding: 2%;
+  }
+  
+  .about-header {
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+  .about-header h3 {
+    padding-top: 1%;
+    font-size: 20px;
+  }
+  
+  
+  .section-content {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .image-container {
+    flex: 0 0 25%; /* Set a fixed width for the image container */
+    padding-left: 1%;
+  }
+
+  .image-container-dog {
+    flex: 0 0 17%;
+    padding-left: 1%;
+}
+  
+  .about-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5%;
+    padding: 1%;
+  }
+ 
+  .text {
+    flex: 1; /* Allow text to occupy remaining space */
+    padding-right: 10%;
+  }
+  
+  .text h2 {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+  @media screen and (max-width: 768px) {
+    .section-content {
+      flex-direction: column; /* Stack items vertically on small screens */
+      text-align: center;
+    }
+  
+    .image-container {
+      flex: 0 0 100%; /* Full width for images on small screens */
+      margin-bottom: 10px; /* Add space between images */
+    }
+  
+    .text {
+      flex: 1; /* Allow text to occupy full width */
+      padding: 0; /* Remove padding for better mobile layout */
+      text-align: center;
+      align-items: center;
+    }
+    .text h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+  }
+  @media screen and (min-width: 1200px) and (min-height: 800px) {
+    .section-content {
+      margin-right: 20%;
+      margin-left: 20%;
+    }
+    .text {
+      padding-right: 17%;
+    }
+  }
+  

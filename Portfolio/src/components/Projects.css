@@ -1,0 +1,16 @@
+.project-header {
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.project-header h3 {
+  padding-top: 1%;
+  font-size: 20px;
+}
+.image-container-code {
+  flex: 0 0 33%; /* Set a fixed width for the image container */
+  padding-left: 1%;
+}
+figcaption { 
+  text-align: center;
+}

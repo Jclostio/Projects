@@ -1,0 +1,32 @@
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.footer-hr {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 7%;
+}
+
+/* Style links within the contact container */
+.contact-container a {
+  text-decoration: none;
+  color: blue;
+}
+
+/* Media query for screens smaller than 768px (typical mobile devices) */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    text-align: center; /* Center the items horizontally */
+    margin: 0;
+    padding: 0;
+  }
+}
