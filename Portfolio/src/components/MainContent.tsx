@@ -15,14 +15,9 @@ const MainContent = () => {
             </span>
           </h1>
           <p className="main-text-box">
-            I'm a recent graduate from Montana State University, holding a
-            Bachelor's degree in Computer Science and a minor in Mathematics.
-            Currently, I am working at a startup software company focusing on
-            developing agency management systems for insurance companies.
-            However, I'm now in search of a fresh challenge where I can further
-            my skills, contribute to a larger team, and be part of a broader
-            mission. I'm enthusiastic about exploring new opportunities and
-            would welcome the chance to connect.
+          I graduated from Montana State University with a major in Computer Science and a minor in Mathematics.
+          After college, I worked at a startup developing agency management systems for insurance companies.
+          Currently, I am a full-stack developer, focusing on P&C Policy administration software.
           </p>
         </div>
       </div>
